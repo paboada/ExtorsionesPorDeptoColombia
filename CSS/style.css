@@ -1,0 +1,17 @@
+.axis--x path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+.Etiquetas
+{
+  position: absolute;
+  top: 120px;
+  right: 0;
+  width: 700px;
+  height: 200px;
+}
