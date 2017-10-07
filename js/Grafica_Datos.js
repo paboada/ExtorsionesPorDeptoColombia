@@ -1,52 +1,60 @@
 /* global d3 */
 function maneja_datos(){
-    
+   
   if (document.getElementById('cbox1').checked)
   {
+    var color = "red";
     var texto = document.getElementById('cbox1').value;
-    dibujar_datos(texto);    
+    dibujar_datos(texto,color);    
   }
   if (document.getElementById('cbox2').checked)
   {
+    var color = "blue";
     var texto = document.getElementById('cbox2').value;
-    dibujar_datos(texto);
+    dibujar_datos(texto,color);   
     
   }
   if (document.getElementById('cbox3').checked)
   {
+      var color = "yellow";
     var texto = document.getElementById('cbox3').value;
-    dibujar_datos(texto);    
+    dibujar_datos(texto,color);    
   }
   if (document.getElementById('cbox4').checked)
   {
+        var color = "black";
     var texto = document.getElementById('cbox4').value;
-    dibujar_datos(texto);    
+   dibujar_datos(texto,color);     
   }
   if (document.getElementById('cbox5').checked)
   {
+      var color = "green";
     var texto = document.getElementById('cbox5').value;
-    dibujar_datos(texto);    
+    dibujar_datos(texto,color);   
   }
   if (document.getElementById('cbox6').checked)
   {
+    var color = "purple";
     var texto = document.getElementById('cbox6').value;
-    dibujar_datos(texto);    
+    dibujar_datos(texto,color);    
   }
   if (document.getElementById('cbox7').checked)
   {
+      var color = "brown";
     var texto = document.getElementById('cbox7').value;
-    dibujar_datos(texto);    
+    dibujar_datos(texto,color);      
   }
   if (document.getElementById('cbox8').checked)
   {
+      var color = "GreenYellow";
     var texto = document.getElementById('cbox8').value;
-    dibujar_datos(texto);    
+    dibujar_datos(texto,color);     
   }
   //alert('Conoce ' + cant + ' lenguajes ' + texto);
 }
 
 
-function dibujar_datos(nombre){   
+function dibujar_datos(nombre,color){   
 
 
 var svg = d3.select("svg"),
@@ -95,7 +103,7 @@ d3.tsv(nombre_archivo, type, function(error, data) {
     d3.max(cities, function(c) { return d3.max(c.values, function(d) { return d.temperature; }); })
   ]);*/
 
-y.domain([0,200]);
+y.domain([0,110]);
 
   z.domain(cities.map(function(c) { return c.id; }));
   
@@ -123,11 +131,9 @@ y.domain([0,200]);
               .attr("class", "city");
       
 //colors = d3.scale.category20();
-var color = d3.scaleOrdinal(d3.schemeCategory20);
-
     city.append("path")
       .attr("class", "line")
-      .attr("stroke","blue")
+      .attr("stroke",color)
       //.attr("stroke",function(d){return color(d) )
       .attr("d", function(d) { return line(d.values); })
       //.attr("stroke", function(d) { return z(d.id); })
