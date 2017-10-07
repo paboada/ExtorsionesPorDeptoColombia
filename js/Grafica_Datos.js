@@ -15,8 +15,32 @@ function maneja_datos(){
   if (document.getElementById('cbox3').checked)
   {
     var texto = document.getElementById('cbox3').value;
-    dibujar_datos(texto);
-    
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('cbox4').checked)
+  {
+    var texto = document.getElementById('cbox4').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('cbox5').checked)
+  {
+    var texto = document.getElementById('cbox5').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('cbox6').checked)
+  {
+    var texto = document.getElementById('cbox6').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('cbox7').checked)
+  {
+    var texto = document.getElementById('cbox7').value;
+    dibujar_datos(texto);    
+  }
+  if (document.getElementById('cbox8').checked)
+  {
+    var texto = document.getElementById('cbox8').value;
+    dibujar_datos(texto);    
   }
   //alert('Conoce ' + cant + ' lenguajes ' + texto);
 }
