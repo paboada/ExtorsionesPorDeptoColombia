@@ -31,7 +31,7 @@ function maneja_datos(){
       var color = "green";
     var texto = document.getElementById('cbox5').value;
     dibujar_datos(texto,color);   
-  }
+  } 
   if (document.getElementById('cbox6').checked)
   {
     var color = "purple";
