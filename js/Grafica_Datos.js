@@ -52,7 +52,48 @@ function maneja_datos(){
     var texto = document.getElementById('cbox8').value;
     dibujar_datos(texto,color);     
   }
-  //alert('Conoce ' + cant + ' lenguajes ' + texto);
+  if (document.getElementById('cbox9').checked)
+  {
+      var color = "DARKSALMON";
+    var texto = document.getElementById('cbox9').value;
+    dibujar_datos(texto,color);     
+  }
+  if (document.getElementById('cbox10').checked)
+  {
+      var color = "MEDIUMVIOLETRED";
+    var texto = document.getElementById('cbox10').value;
+    dibujar_datos(texto,color);     
+  }
+  if (document.getElementById('cbox11').checked)
+  {
+      var color = "TOMATO";
+    var texto = document.getElementById('cbox11').value;
+    dibujar_datos(texto,color);     
+  }
+  if (document.getElementById('cbox12').checked)
+  {
+      var color = "DARKORANGE";
+    var texto = document.getElementById('cbox12').value;
+    dibujar_datos(texto,color);     
+  }
+  if (document.getElementById('cbox13').checked)
+  {
+      var color = "MAGENTA";
+    var texto = document.getElementById('cbox13').value;
+    dibujar_datos(texto,color);     
+  }
+  if (document.getElementById('cbox14').checked)
+  {
+      var color = "CHARTREUSE";
+    var texto = document.getElementById('cbox14').value;
+    dibujar_datos(texto,color);     
+  }
+  if (document.getElementById('cbox15').checked)
+  {
+      var color = "MEDIUMSEAGREEN";
+    var texto = document.getElementById('cbox15').value;
+    dibujar_datos(texto,color);     
+  }
 }
 
 function limpiar_dom(){
@@ -104,16 +145,9 @@ d3.tsv(nombre_archivo, type, function(error, data) {
   });
 
 //dominio para ver por mes
- x.domain([new Date(2012, 0, 1), new Date(2016, 12, 31)]).range([0, width]);
-
-  /*y.domain([
-    d3.min(cities, function(c) { return d3.min(c.values, function(d) { return d.temperature; }); }),
-    d3.max(cities, function(c) { return d3.max(c.values, function(d) { return d.temperature; }); })
-  ]);*/
-
+x.domain([new Date(2012, 0, 1), new Date(2016, 12, 31)]).range([0, width]);
 y.domain([0,110]);
-
-  z.domain(cities.map(function(c) { return c.id; }));
+z.domain(cities.map(function(c) { return c.id; }));
   
 //crea elementos para g
   g.append("g")
@@ -162,4 +196,14 @@ function type(d, _, columns) {
   for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
   return d;
 }
+}
+
+function seleccionar_todos(){
+    var etiquetas = d3.selectAll("input");
+    etiquetas.property('checked', true);
+}
+
+function ninguno(){
+    var etiquetas = d3.selectAll("input");
+    etiquetas.property('checked', false);
 }
