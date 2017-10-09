@@ -1,6 +1,8 @@
 /* global d3 */
 function maneja_datos(){
-   
+  
+  limpiar_dom();
+  
   if (document.getElementById('cbox1').checked)
   {
     var color = "red";
@@ -53,6 +55,12 @@ function maneja_datos(){
   //alert('Conoce ' + cant + ' lenguajes ' + texto);
 }
 
+function limpiar_dom(){
+    var elementos = d3.selectAll(".city");
+    elementos.remove();
+    var elementos = d3.selectAll("g");
+    elementos.remove();
+}
 
 function dibujar_datos(nombre,color){   
 
@@ -130,7 +138,7 @@ y.domain([0,110]);
               .enter().append("g")
               .attr("class", "city");
       
-//colors = d3.scale.category20();
+
     city.append("path")
       .attr("class", "line")
       .attr("stroke",color)
@@ -139,8 +147,7 @@ y.domain([0,110]);
       //.attr("stroke", function(d) { return z(d.id); })
       ;
      
-
-  city.append("text")
+    city.append("text")
       .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
       .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")"; })
       .attr("x", 3)
