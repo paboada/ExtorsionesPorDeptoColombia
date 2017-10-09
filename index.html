@@ -3,17 +3,22 @@
 <link rel="stylesheet" href="CSS/style.css">
 <svg width="1000" height="600"></svg>
 <head>
+ 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script type="text/javascript" src="js/Grafica_Datos.js"></script>
 </head>
 <body>
- <div class="Etiquetas">
+    <div>
+ <h>COMPORTAMIENTO DEL NUMERO DE EXTORSIONES 2014-2016* POR DEPARTAMENTO</h>
+<p>*Los datos del año 2015 no fueron encontrados en la base de datos del gobierno nacional para ninguno de los departametos</p> 
+    </div>
+    <div class="Etiquetas">
         <button onclick="seleccionar_todos()" style="width: 150px">Seleccionar Todos</button><br> 
         <button onclick="ninguno()" style="width: 150px">Ninguno</button><br>
         <label> <input type="checkbox" id="cbox1" value="Amazonas">Amazonas</label><br>
        <label> <input type="checkbox" id="cbox2" value="Antioquia">Antioquia</label><br>
        <label> <input type="checkbox" id="cbox3" value="Arauca">Arauca</label><br>
-       <label> <input type="checkbox" id="cbox4" value="Casanare">Casanare</label><br> 
+       <label> <input type="checkbox" id="cbox4" value="Casanare">Casanare</label><br>
        <label> <input type="checkbox" id="cbox5" value="Cauca">Cauca</label><br>
        <label> <input type="checkbox" id="cbox6" value="Cesar">Cesar</label><br>
        <label> <input type="checkbox" id="cbox7" value="Cundinamarca">Cundinamarca</label><br>
@@ -25,8 +30,6 @@
        <label> <input type="checkbox" id="cbox13" value="NortedeSantander">NortedeSantander</label><br>
        <label> <input type="checkbox" id="cbox14" value="Putumayo">Putumayo</label><br>
        <label> <input type="checkbox" id="cbox15" value="Santander">Sandander</label><br>
-    
-    <div> 
-        <button onclick="maneja_datos()">Dibujar</button>
+        <button onclick="maneja_datos()" style="width: 150px">Dibujar</button>
     </div>
 </body>
