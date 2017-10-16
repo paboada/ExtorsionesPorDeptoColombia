@@ -1,31 +1,15 @@
 /* global d3 */
 function maneja_datos() {
   limpiar_dom();
+
+  var colors = d3.scaleOrdinal(d3.schemeCategory20);
   
-  var colors = [
-    "red",
-    "blue",
-    "yellow",
-    "black",
-    "green",
-    "purple",
-    "brown",
-    "GreenYellow",
-    "DARKSALMON",
-    "MEDIUMVIOLETRED",
-    "TOMATO",
-    "DARKORANGE",
-    "MAGENTA",
-    "CHARTREUSE",
-    "MEDIUMSEAGREEN"
-  ];
-  
-  colors.forEach(function(color, index) {
-    var box = document.getElementById('cbox' + (index + 1).toString());
+  for (i = 0; i < 15; i++) {
+    var box = document.getElementById('cbox' + (i + 1).toString());
     if (box.checked) {
-      dibujar_datos(box.value, color);    
+      dibujar_datos(box.value, colors(i));    
     }
-  });
+  }
 }
 
 function limpiar_dom() {

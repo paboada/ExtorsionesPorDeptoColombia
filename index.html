@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <link rel="stylesheet" href="CSS/style.css">
-<svg width="1000" height="600"></svg>
 <head>
- 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script type="text/javascript" src="js/Grafica_Datos.js"></script>
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
-    <div>
- <h>COMPORTAMIENTO DEL NUMERO DE EXTORSIONES 2014-2016* POR DEPARTAMENTO</h>
-<p>*Los datos del año 2015 no fueron encontrados en la base de datos del gobierno nacional para ninguno de los departamentos</p> 
-<p>Esta visualizacion tiene como obejtivo principal la comparacion por departamento del numero de extorsiones entre los 
-   años 2014 a 2016. Se presenta un variacion fuerte a 0 en el año 2015 debido a que los datos para este año no fueron encontrados
-   en las bases de datos consultadas. La comparacion entre los departamentos esta enfocada a su comportamiento en  
-   credimiento o decrecimiento del numero de extorsiones. Se puede realizar un analisis sobre este comportamiento en relacion al proceso 
-   de paz llevado a cabo en estos ultimos 4 años buscando una correlacion entre las zonas en donde mas presencia de guerrilla habia para
-   cada uno de los años, sin embargo, la visualizacion no llega a este alcance debido a que en este momentos no se cuenta con esta informacion.
- </p> 
-    </div>
-    <div class="Etiquetas">
-        <button onclick="seleccionar_todos()" style="width: 150px">Seleccionar Todos</button><br> 
-        <button onclick="ninguno()" style="width: 150px">Ninguno</button><br>
-        <label> <input type="checkbox" id="cbox1" value="Amazonas">Amazonas</label><br>
-       <label> <input type="checkbox" id="cbox2" value="Antioquia">Antioquia</label><br>
-       <label> <input type="checkbox" id="cbox3" value="Arauca">Arauca</label><br>
-       <label> <input type="checkbox" id="cbox4" value="Casanare">Casanare</label><br>
-       <label> <input type="checkbox" id="cbox5" value="Cauca">Cauca</label><br>
-       <label> <input type="checkbox" id="cbox6" value="Cesar">Cesar</label><br>
-       <label> <input type="checkbox" id="cbox7" value="Cundinamarca">Cundinamarca</label><br>
-       <label> <input type="checkbox" id="cbox8" value="Guajira">Guajira</label><br>
-       <label> <input type="checkbox" id="cbox9" value="Guaviare">Guaviare</label><br>
-       <label> <input type="checkbox" id="cbox10" value="Huila">Huila</label><br>
-       <label> <input type="checkbox" id="cbox11" value="Magdalena">Magdalena</label><br>
-       <label> <input type="checkbox" id="cbox12" value="Meta">Meta</label><br>
-       <label> <input type="checkbox" id="cbox13" value="NortedeSantander">NortedeSantander</label><br>
-       <label> <input type="checkbox" id="cbox14" value="Putumayo">Putumayo</label><br>
-       <label> <input type="checkbox" id="cbox15" value="Santander">Sandander</label><br>
-        <button onclick="maneja_datos()" style="width: 150px">Dibujar</button>
-    </div>
+  <div>
+    <h3>NUMERO DE EXTORSIONES 2014-2016* POR DEPARTAMENTO <small>por Pablo Boada</small></h3>
+    <svg width="1000" height="600"></svg>
+    <p>*Los datos del año 2015 no fueron encontrados en la base de datos del gobierno nacional para ninguno de los departamentos</p> 
+    <p>Esta visualizacion tiene como obejtivo principal la comparacion por departamento del numero de extorsiones entre los 
+    años 2014 a 2016. Se presenta un variacion fuerte a 0 en el año 2015 debido a que los datos para este año no fueron encontrados
+    en las bases de datos consultadas. La comparacion entre los departamentos esta enfocada a su comportamiento en  
+    credimiento o decrecimiento del numero de extorsiones. Se puede realizar un analisis sobre este comportamiento en relacion al proceso 
+    de paz llevado a cabo en estos ultimos 4 años buscando una correlacion entre las zonas en donde mas presencia de guerrilla habia para
+    cada uno de los años, sin embargo, la visualizacion no llega a este alcance debido a que en este momentos no se cuenta con esta informacion.
+    </p> 
+  </div>
+  <div class="Etiquetas">
+    <button onclick="seleccionar_todos()" style="width: 200px">Seleccionar Todos</button><br> 
+    <button onclick="ninguno()" style="width: 200px">Ninguno</button><br>
+    <label> <input type="checkbox" id="cbox1" value="Amazonas">Amazonas</label><br>
+    <label> <input type="checkbox" id="cbox2" value="Antioquia">Antioquia</label><br>
+    <label> <input type="checkbox" id="cbox3" value="Arauca">Arauca</label><br>
+    <label> <input type="checkbox" id="cbox4" value="Casanare">Casanare</label><br>
+    <label> <input type="checkbox" id="cbox5" value="Cauca">Cauca</label><br>
+    <label> <input type="checkbox" id="cbox6" value="Cesar">Cesar</label><br>
+    <label> <input type="checkbox" id="cbox7" value="Cundinamarca">Cundinamarca</label><br>
+    <label> <input type="checkbox" id="cbox8" value="Guajira">Guajira</label><br>
+    <label> <input type="checkbox" id="cbox9" value="Guaviare">Guaviare</label><br>
+    <label> <input type="checkbox" id="cbox10" value="Huila">Huila</label><br>
+    <label> <input type="checkbox" id="cbox11" value="Magdalena">Magdalena</label><br>
+    <label> <input type="checkbox" id="cbox12" value="Meta">Meta</label><br>
+    <label> <input type="checkbox" id="cbox13" value="NortedeSantander">Norte de Santander</label><br>
+    <label> <input type="checkbox" id="cbox14" value="Putumayo">Putumayo</label><br>
+    <label> <input type="checkbox" id="cbox15" value="Santander">Sandander</label><br>
+    <button onclick="maneja_datos()" style="width: 150px">Dibujar</button>
+  </div>
+  <script type="text/javascript" src="js/Grafica_Datos.js"></script>
 </body>
