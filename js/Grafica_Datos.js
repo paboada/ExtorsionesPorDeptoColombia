@@ -1,4 +1,10 @@
 /* global d3 */
+
+function limpiar_dom() {
+  d3.selectAll(".city").remove();
+  d3.selectAll("g").remove();
+}
+
 function maneja_datos() {
   limpiar_dom();
 
@@ -12,11 +18,6 @@ function maneja_datos() {
   }
 }
 
-function limpiar_dom() {
-  d3.selectAll(".city").remove();
-  d3.selectAll("g").remove();
-}
-
 function dibujar_datos(nombre, color) {   
   var svg = d3.select("svg"),
     margin = {top: 20, right: 120, bottom: 30, left: 50},
@@ -27,8 +28,10 @@ function dibujar_datos(nombre, color) {
   var parseTime = d3.timeParse("%Y%m");
 
   var x = d3.scaleTime().range([0, width]),
-    y = d3.scaleLinear().range([height, 0]),
-    z = d3.scaleOrdinal(d3.schemeCategory10);
+    y = d3.scaleLinear().range([height, 0]);
+  
+  x.domain([new Date(2012, 0, 1), new Date(2016, 12, 31)]).range([0, width]);
+  y.domain([0,110]);
 
   var line = d3.line()
     .curve(d3.curveBasis)
@@ -50,11 +53,6 @@ function dibujar_datos(nombre, color) {
         })
       };
     });
-
-    //dominio para ver por mes
-    x.domain([new Date(2012, 0, 1), new Date(2016, 12, 31)]).range([0, width]);
-    y.domain([0,110]);
-    z.domain(cities.map(function(c) { return c.id; }));
 
     //crea elementos para g
     g.append("g")
