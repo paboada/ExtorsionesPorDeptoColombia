@@ -1,83 +1,31 @@
 /* global d3 */
 function maneja_datos() {
   limpiar_dom();
-
-  if (document.getElementById('cbox1').checked) {
-    var color = "red";
-    var texto = document.getElementById('cbox1').value;
-    dibujar_datos(texto,color);    
-  }
-  if (document.getElementById('cbox2').checked) {
-    var color = "blue";
-    var texto = document.getElementById('cbox2').value;
-    dibujar_datos(texto,color);   
-
-  }
-  if (document.getElementById('cbox3').checked) {
-    var color = "yellow";
-    var texto = document.getElementById('cbox3').value;
-    dibujar_datos(texto,color);    
-  }
-  if (document.getElementById('cbox4').checked) {
-    var color = "black";
-    var texto = document.getElementById('cbox4').value;
-    dibujar_datos(texto,color);     
-  }
-  if (document.getElementById('cbox5').checked) {
-    var color = "green";
-    var texto = document.getElementById('cbox5').value;
-    dibujar_datos(texto,color);   
-  } 
-  if (document.getElementById('cbox6').checked) {
-    var color = "purple";
-    var texto = document.getElementById('cbox6').value;
-    dibujar_datos(texto,color);    
-  }
-  if (document.getElementById('cbox7').checked) {
-    var color = "brown";
-    var texto = document.getElementById('cbox7').value;
-    dibujar_datos(texto,color);      
-  }
-  if (document.getElementById('cbox8').checked) {
-    var color = "GreenYellow";
-    var texto = document.getElementById('cbox8').value;
-    dibujar_datos(texto,color);     
-  }
-  if (document.getElementById('cbox9').checked) {
-    var color = "DARKSALMON";
-    var texto = document.getElementById('cbox9').value;
-    dibujar_datos(texto,color);     
-  }
-  if (document.getElementById('cbox10').checked) {
-    var color = "MEDIUMVIOLETRED";
-    var texto = document.getElementById('cbox10').value;
-    dibujar_datos(texto,color);     
-  }
-  if (document.getElementById('cbox11').checked) {
-    var color = "TOMATO";
-    var texto = document.getElementById('cbox11').value;
-    dibujar_datos(texto,color);     
-  }
-  if (document.getElementById('cbox12').checked) {
-    var color = "DARKORANGE";
-    var texto = document.getElementById('cbox12').value;
-    dibujar_datos(texto,color);     
-  }
-  if (document.getElementById('cbox13').checked) {
-    var color = "MAGENTA";
-    var texto = document.getElementById('cbox13').value;
-    dibujar_datos(texto,color);     
-  }
-  if (document.getElementById('cbox14').checked) {
-    var color = "CHARTREUSE";
-    var texto = document.getElementById('cbox14').value;
-    dibujar_datos(texto,color);     
-  }
-  if (document.getElementById('cbox15').checked) {
-    var color = "MEDIUMSEAGREEN";
-    var texto = document.getElementById('cbox15').value;
-    dibujar_datos(texto,color);     
-  }
+  
+  var colors = [
+    "red",
+    "blue",
+    "yellow",
+    "black",
+    "green",
+    "purple",
+    "brown",
+    "GreenYellow",
+    "DARKSALMON",
+    "MEDIUMVIOLETRED",
+    "TOMATO",
+    "DARKORANGE",
+    "MAGENTA",
+    "CHARTREUSE",
+    "MEDIUMSEAGREEN"
+  ];
+  
+  colors.forEach(function(color, index) {
+    var box = document.getElementById('cbox' + (index + 1).toString());
+    if (box.checked) {
+      dibujar_datos(box.value, color);    
+    }
+  });
 }
 
 function limpiar_dom() {
@@ -87,7 +35,7 @@ function limpiar_dom() {
 
 function dibujar_datos(nombre, color) {   
   var svg = d3.select("svg"),
-    margin = {top: 20, right: 80, bottom: 30, left: 50},
+    margin = {top: 20, right: 120, bottom: 30, left: 50},
     width = svg.attr("width") - margin.left - margin.right,
     height = svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
