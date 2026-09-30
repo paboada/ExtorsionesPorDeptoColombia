@@ -1,4 +1,4 @@
-# ExtorsionesPorDeptoColombia
+# Extorsiones Por Depto Colombia
 La grafica permite al usuario elegir varios departamentos para comparar el comportamiento del numero de extorsiones 
 entre los años 2014 al 2016.
 
